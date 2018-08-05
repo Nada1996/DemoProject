@@ -3,6 +3,11 @@
 <p>
   <strong>Body:</strong>
   <%= @noktum.body %>
+  <!-- <% if @noktum.comments%>
+    <% @noktum.comments.each do |comment|%>
+    <%= comment%>
+     <% end%>
+   <% end%> -->
 </p>
 
 <%= link_to 'Edit', edit_noktum_path(@noktum) %> |
@@ -11,4 +16,4 @@
 <div class="social">
      <a href="http://twitter.com/share" class="twitter-share-button" data-url="<%= noktum_url(@noktum) %>" data-text="Watching <%= @noktum.body %> " data-count="horizontal" data-via="ruby_plus">Tweet</a>
      <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
-   </div
+   </div>
