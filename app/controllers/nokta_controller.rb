@@ -23,7 +23,7 @@ class NoktaController < ApplicationController
   # GET /nokta
   # GET /nokta.json
   def index
-    @nokta =Noktum.where(hidden: false).paginate(:per_page => 5, :page => params[:page])
+    @nokta =Noktum.where(hidden: false).paginate(:per_page => 2, :page => params[:page])
     #Noktum.paginate(:per_page => 2, :page => params[:page])
     #Noktum.all
     #.where(hidden_state: false)
