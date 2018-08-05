@@ -13,12 +13,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  include CarrierWave::MiniMagick
-#<%= image_tag current_user.avatar_url%>
- # Choose what kind of storage to use for this uploader:
- version :thumb do
-  process :resize_to_fill => [100, 100]
-end
+#   include CarrierWave::MiniMagick
+# #<%= image_tag current_user.avatar_url%>
+#  # Choose what kind of storage to use for this uploader:
+#  version :thumb do
+#   process :resize_to_fill => [100, 100]
+# end
 #  <%= image_tag current_user.avatar_url%>
 
  # Add a white list of extensions which are allowed to be uploaded.
