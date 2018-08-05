@@ -1,0 +1,3 @@
+$('.vpos').bind('ajax:success', function() {
+ $('.vcount-<%= @noktum.id %>').html('<%= j  @noktum.get_upvotes.size.to_s %>');
+});

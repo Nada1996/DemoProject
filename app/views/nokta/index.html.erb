@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nokta</h1>
+<h2>All Nokta</h2>
+<div  id="incomplete_tasks">
+  <%= render @nokta %>
+</div>
+<br>
+<%= link_to 'New Noktum', new_noktum_path , id:"new_link",remote: true%>
+<%= will_paginate @nokta %>

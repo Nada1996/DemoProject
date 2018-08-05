@@ -1,0 +1,20 @@
+<h1>Profile#list</h1>
+<p>Find me in app/views/profile/list.html.erb</p>
+
+<h1>User's Nokta</h1>
+
+<table>
+  <thead>
+  </thead>
+
+  <tbody>
+    <% @allnokta.each do |nokta| %>
+      <tr>
+        <td><%= nokta.body%></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

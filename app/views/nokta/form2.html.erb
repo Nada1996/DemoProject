@@ -1,0 +1,65 @@
+<%= form_with(model: noktum, local: true) do |form| %>
+  <% if noktum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(noktum.errors.count, "error") %> prohibited this noktum from being saved:</h2>
+
+      <ul>
+      <% noktum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+//= require turbolinks
+
+
+format.html { redirect_to @noktum, notice: 'Noktum was successfully created.' }
+format.js {render layout: false}
+
+format.html { redirect_to @noktum, notice: 'Noktum was successfully c
+
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <% @nokta.each do |noktum| %>
+      <tr id:"noktas">
+        <td><%= noktum.body %></td>
+        <td><%= noktum.user.email %></td>
+
+        <%= link_to like_noktum_path(noktum), method: :put do %>
+          Upvote
+          <%= noktum.get_upvotes.size %>
+          <% end %>
+
+          <%= link_to dislike_noktum_path(noktum), method: :put do %>
+          Downvote
+          <%= noktum.get_downvotes.size %>
+          <% end %>
+        <td><%= link_to 'Show', noktum %></td>
+        <td><%= link_to 'Edit', edit_noktum_path(noktum) %></td>
+        <td><%= link_to 'Destroy', noktum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,14 @@
+
+
+<p>
+  <strong>Body:</strong>
+  <%= @noktum.body %>
+</p>
+
+<%= link_to 'Edit', edit_noktum_path(@noktum) %> |
+<%= link_to 'Back', nokta_path %>
+
+<div class="social">
+     <a href="http://twitter.com/share" class="twitter-share-button" data-url="<%= noktum_url(@noktum) %>" data-text="Watching <%= @noktum.body %> " data-count="horizontal" data-via="ruby_plus">Tweet</a>
+     <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+   </div

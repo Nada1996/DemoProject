@@ -1,0 +1,22 @@
+<%= form_for noktum, remote: true do |f| %>
+  <%= f.label :body, noktum.body %>
+  <%= noktum.user.email %>
+
+
+  <%= link_to like_noktum_path(noktum), method: :put ,remote: true,class: 'vpos' do%>
+        Upvote
+
+    <span class="vcount-<%= noktum.id %>"><%= noktum.get_upvotes.size %></span>
+    <% end %>
+    <%= link_to dislike_noktum_path(noktum), method: :put ,remote: true,class: 'vneg' do%>
+    Downvote
+    <span class="ncount-<%= noktum.id %>"><%= noktum.get_downvotes.size %></span>
+    <% end %>
+    <%= form_for [noktum, noktum.comments.new]  do |t| %>
+      <%= t.text_field :content, placeholder: 'Add a comment...' %>
+      <%= t.submit %>
+    <% end %>
+    <%= link_to 'Show', noktum %>
+    <%= link_to 'Edit', edit_noktum_path(noktum) %>
+  <%= link_to "(remove)", noktum, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+<% end %>
