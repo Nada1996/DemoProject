@@ -13,7 +13,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-#   include CarrierWave::MiniMagick
+   include CarrierWave::MiniMagick
+
+   version :thumb do
+  process :resize_to_fill => [50, 50]
+end
 # #<%= image_tag current_user.avatar_url%>
 #  # Choose what kind of storage to use for this uploader:
 #  version :thumb do
